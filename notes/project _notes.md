@@ -66,3 +66,37 @@ Therefore:
 C = 15 + 1 = 16
 
 Credit Cap = 16
+# step 1 :
+ i made a folder in the  desktop "courseforge"
+then i opend the github and i made repository 
+# step 2:
+i copied the https link for the repository to conect the project with github 
+# step 3:
+i choose visual studio code to write and run the project with the necessary tools setup to run c++ programs ...including (git , c++ compiler )and chick if g++ work well 
+so now everything ready to write and run the code 
+# step 4 :
+i opend the folder courseforge in vs code after connected it with repository so now i can handle with git inside the vs code 
+# step 5 :
+i made it a file to make  notes " project_notes.md"
+# step 6:
+when i tried to make commit to the first time i had  a problem because the git inside the terminal didnt have the user name and the user email so i put "git config user.name , git config user. email" and the opreation sucssed i saw "no changed files"
+then "sync changes"
+# step 7:
+i made the main file project "main .cpp"
+then i wrote the basic program of c++
+# step 8:
+in the terminal i put this stetmant" g++ main.cpp -o main.exe" isaw new file "main.exe"
+then i wrote "./main.exe" then enter i saw seed 7245 so that mean the first test sucssed
+i did same thing for all numbers  same test
+# step9 :
+i use a funcation to random number generator and then test it and give me the first number 2033824514
+and the second number
+note: chatgpt helped me in some points for example when i used the terminal , aslo in git, and in MSYS2
+-----------------> first  three days 
+# step one :
+ i made struct course then made an array for 15 courses
+ # step 2:
+ i made struct student then made array for student have the id and gpa between (2-4), name ...
+ # step 3:
+ 
+
