@@ -115,5 +115,6 @@ note: chatgpt helped me in some points for example when i used the terminal , as
  print the result for two ways
    make sure if both list match or not
    trace mode for array have 10 index
+   --------> second 3 days done
 
 
