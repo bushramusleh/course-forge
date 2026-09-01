@@ -37,6 +37,25 @@ void selectionsort(student students[],int size,int& comparisons,int& swaps){
         }
     }
 }
+void insertionSort(student students[], int size, int& comparisons, int& shifts) {
+    comparisons = 0;
+    shifts = 0;
+    for (int i = 1; i < size; i++) {
+        student key = students[i];
+        int j = i - 1;
+        while (j >= 0 ){
+            comparisons++;
+            students[j + 1] = students[j];
+            j--;
+            shifts++;
+        }
+     {
+          break;
+        }
+    
+        students[j + 1] = key;
+    }
+}
 int main()
 {
     const int seed = 7245;
@@ -73,8 +92,17 @@ switch(choise)
 {
     case 1:
     {
+        student selectedstudents[100];
+        student insertionstudents[100];
+        for (int i = 0; i < numberofrecords; i++)
+        {
+            selectedstudents[i] = students[i];
+            insertionstudents[i] = students[i];
+        }
     int comparisons=0,swaps=0;
         selectionsort(students, numberofrecords,comparisons,swaps);
+        int insertioncomparisons=0,insertionshifts=0;
+        insertionSort(insertionstudents, numberofrecords,insertioncomparisons,insertionshifts);
         cout<<"\n students sorted by gpa:\n";
         for (int i = 0; i < numberofrecords; i++)
         {
@@ -83,8 +111,30 @@ switch(choise)
             cout << "GPA: " << students[i].gpa << endl;
             cout << endl;
         }
+        cout << "\nSelection Sort Comparisons: " << comparisons << endl;
+        cout << "Selection Sort Swaps: " << swaps << endl;
+        cout << "\ninsertion Sort Comparisons: " << insertioncomparisons << endl;
+        cout << "Insertion Sort s: " << insertionshifts << endl;
         cout << "\nComparisons: " << comparisons << endl;
         cout << "Swaps: " << swaps << endl;
+        bool same = true;
+        for (int i = 0; i < numberofrecords; i++)
+        {
+            if (students[i].id != insertionstudents[i].id || students[i].name != insertionstudents[i].name || students[i].gpa != insertionstudents[i].gpa)
+            {
+                same = false;
+                break;
+            }
+            
+        }
+        if (same)
+        {
+            cout << "\nThe two sorting algorithms produced the same results.\n";
+        }
+        else
+        {
+            cout << "\nThe two sorting algorithms produced different results.\n";
+        }
         break;
     }
         case 2:

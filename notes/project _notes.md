@@ -91,7 +91,7 @@ i did same thing for all numbers  same test
 # step9 :
 i use a funcation to random number generator and then test it and give me the first number 2033824514
 and the second number
-note: chatgpt helped me in some points for example when i used the terminal , aslo in git, and in MSYS2
+note: chatgpt helped me in some points for example when i used the terminal , aslo in git, and in MSYS2(g++)
 -----------------> first  three days 
 # step one :
  i made struct course then made an array for 15 courses
@@ -100,5 +100,11 @@ note: chatgpt helped me in some points for example when i used the terminal , as
  # step 3:
  i made switch to let the program work accordaing to user input
  # step 4:
- now the main menu pregram
+ now  make the main menu pregram
+ # step 5: 
+ i  implement the selection sort with comparisons and swaps 
+ and commit it with git hup 
+ # step 6:
+ 
+
 
