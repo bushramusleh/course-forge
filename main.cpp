@@ -56,6 +56,31 @@ void insertionSort(student students[], int size, int& comparisons, int& shifts) 
         students[j + 1] = key;
     }
 }
+void insertionSorttrace(int arr[], int size) {
+    cout<<"input:";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    for (int i = 1; i < size; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+        cout << "After inserting element " << key << ": ";
+        for (int k = 0; k < size; k++) {
+            cout << arr[k] << " ";
+            if (k==i)
+            {
+                cout<<"|";
+            }
+        }
+        cout << endl;
+    }
+}
 int main()
 {
     const int seed = 7245;
@@ -135,6 +160,9 @@ switch(choise)
         {
             cout << "\nThe two sorting algorithms produced different results.\n";
         }
+        int tracearray[10] = {5, 2, 9, 1, 5, 6, 3, 8, 7, 4};
+        cout << "\nInsertion Sort Trace:\n";
+        insertionSorttrace(tracearray, 10);
         break;
     }
         case 2:

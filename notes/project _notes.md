@@ -105,6 +105,15 @@ note: chatgpt helped me in some points for example when i used the terminal , as
  i  implement the selection sort with comparisons and swaps 
  and commit it with git hup 
  # step 6:
- 
+ module one ready 
+ selection sort
+ comarisons 
+ swaps 
+ insertion sort into same data
+ count comparisons 
+ count shifts 
+ print the result for two ways
+   make sure if both list match or not
+   trace mode for array have 10 index
 
 
