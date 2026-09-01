@@ -98,5 +98,7 @@ note: chatgpt helped me in some points for example when i used the terminal , as
  # step 2:
  i made struct student then made array for student have the id and gpa between (2-4), name ...
  # step 3:
- 
+ i made switch to let the program work accordaing to user input
+ # step 4:
+ now the main menu pregram
 

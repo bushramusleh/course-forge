@@ -18,6 +18,25 @@ struct student
     string name;
     double gpa;
 };
+void selectionsort(student students[],int size,int& comparisons,int& swaps){
+    comparisons = 0;
+    swaps = 0;
+    for(int i=0;i<size-1;i++){
+        int minindex=i;
+        for(int j=i+1;j<size;j++){
+            comparisons++;
+            if(students[j].gpa<students[minindex].gpa){
+                minindex=j;
+            }
+        }
+        if(minindex!=i){
+            student temp=students[i];
+            students[i]=students[minindex];
+            students[minindex]=temp;
+            swaps++;
+        }
+    }
+}
 int main()
 {
     const int seed = 7245;
@@ -41,7 +60,55 @@ int main()
         cout << "GPA: " << students[i].gpa << endl;
         cout << endl;
     }
-
+    cout<<"\n--main menu--\n";
+    cout<<"1 sort students by records\n";
+cout<<"2  course  study   order\n";
+cout<<"3  best course load\n";
+cout<<"4 search and gcd\n";
+cout<<"5 exit\n";
+int choise;
+cout<<"enter your choise:";
+cin>>choise;
+switch(choise)
+{
+    case 1:
+    {
+    int comparisons=0,swaps=0;
+        selectionsort(students, numberofrecords,comparisons,swaps);
+        cout<<"\n students sorted by gpa:\n";
+        for (int i = 0; i < numberofrecords; i++)
+        {
+            cout << "Student ID: " << students[i].id << endl;
+            cout << "Student Name: " << students[i].name << endl;
+            cout << "GPA: " << students[i].gpa << endl;
+            cout << endl;
+        }
+        cout << "\nComparisons: " << comparisons << endl;
+        cout << "Swaps: " << swaps << endl;
+        break;
+    }
+        case 2:
+        
+            cout<<"course study order not implemented yet\n";
+            break;
+            case 3:
+                
+                cout<<"best course load not implemented yet\n";
+                break;
+            case 4:
+            
+                cout<<"search and gcd not implemented yet\n";
+                break;
+                case 5:
+                
+                    cout<<"exit\n";
+                    break;
+                    default:
+                        cout<<"invalid choise\n";
+            
+        
+    
+}
     for (int i = 0; i < numberofcourses; i++)
     {
 
