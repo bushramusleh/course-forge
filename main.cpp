@@ -81,6 +81,56 @@ void insertionSorttrace(int arr[], int size) {
         cout << endl;
     }
 }
+void courseStudyOrder(course courses[], int numberofcourses) {
+    bool removed[100]={false};
+    int order[100];
+    int count=0;
+    while (count < numberofcourses) {
+        bool found = false;
+        for (int i = 0; i < numberofcourses; i++) {
+            if (!removed[i]) {
+                bool canstudy = false;
+                if (courses[i].prerequisites == "None") {
+                    canstudy = true;
+                } else {
+                    for (int j = 0; j < numberofcourses; j++) {
+                        if (courses[j].code == courses[i].prerequisites &&removed[j]) {
+                            canstudy = true;
+                            break;
+                        }
+                    }
+                }
+                for (int j = 0; j < numberofcourses; j++) {
+                    if (!removed[j] && courses[i].prerequisites == courses[j].code) {
+                        canstudy = true;
+                        break;
+                    }
+                }
+                if (canstudy) {
+
+                    order[count] = i;
+                    removed[i] = true;
+                    count++;
+                    found = true;
+                    break;
+                }
+            }
+        }
+        if (!found) {
+            cout << "Error: Circular dependency detected among courses." << endl;
+            return;
+        }
+    }
+    cout << "Course Study Order:\n";
+    for (int i = 0; i < numberofcourses; i++) {
+        cout << "Course Code: " << courses[i].code << endl;
+        cout << "Course Name: " << courses[i].name << endl;
+        cout << "Credits: " << courses[i].credits << endl;
+        cout << "Value: " << courses[i].value << endl;
+        cout << "Prerequisites: " << courses[i].prerequisites << endl;
+        cout << endl;
+    }
+}
 int main()
 {
     const int seed = 7245;
@@ -103,6 +153,22 @@ int main()
         cout << "Student Name: " << students[i].name << endl;
         cout << "GPA: " << students[i].gpa << endl;
         cout << endl;
+    }
+     for (int i = 0; i < numberofcourses; i++)
+    {
+
+        courses[i].code = "CSE" + to_string(i + 1);
+        courses[i].name = "Course " + to_string(i + 1);
+        courses[i].credits = 3 + (i % 3);
+        courses[i].value = 10 + (i % 5);
+        if (i > 0)
+        {
+            courses[i].prerequisites = courses[i - 1].code;
+        }
+        else
+        {
+            courses[i].prerequisites = "None";
+        }
     }
     cout<<"\n--main menu--\n";
     cout<<"1 sort students by records\n";
@@ -167,7 +233,7 @@ switch(choise)
     }
         case 2:
         
-            cout<<"course study order not implemented yet\n";
+            courseStudyOrder(courses, numberofcourses);
             break;
             case 3:
                 
@@ -187,22 +253,7 @@ switch(choise)
         
     
 }
-    for (int i = 0; i < numberofcourses; i++)
-    {
-
-        courses[i].code = "CSE" + to_string(i + 1);
-        courses[i].name = "Course " + to_string(i + 1);
-        courses[i].credits = 3 + (i % 3);
-        courses[i].value = 10 + (i % 5);
-        if (i > 0)
-        {
-            courses[i].prerequisites = courses[i - 1].code;
-        }
-        else
-        {
-            courses[i].prerequisites = "None";
-        }
-    }
+   
     for (int i = 0; i < numberofcourses; i++)
     {
         cout << "course Code: " << courses[i].code << endl;
