@@ -131,6 +131,46 @@ void courseStudyOrder(course courses[], int numberofcourses) {
         cout << endl;
     }
 }
+void bestcourseload(course courses[], int numberofcourses, int creditcap) {
+    cout << "Best Course Load:\n";
+    int  bestvalue = 0;
+    int bestcredits = 0;
+    bool selected[100] = {false};
+    int totalcombinations = 1 << numberofcourses;
+    for (int mask = 0; mask< totalcombinations; mask++) {
+        int currentcredits = 0;
+        int currentvalue = 0;
+        for (int i = 0; i< numberofcourses; i++) {
+            if (mask  & (1 << i)) {
+                currentcredits += courses[i].credits;
+                currentvalue += courses[i].value;
+            }
+        }
+        if (currentcredits <= creditcap && currentvalue > bestvalue) {
+            bestvalue = currentvalue;
+            bestcredits = currentcredits;
+            for (int i = 0; i < numberofcourses; i++) {
+                selected[i] = (mask & (1 << i));
+            }
+        }
+    }
+    cout<<"\n best course load:\n";
+
+
+    for (int i = 0; i < numberofcourses; i++) {
+        if (selected[i]) {
+            cout << "Course Code: " << courses[i].code << endl;
+            cout << "Course Name: " << courses[i].name << endl;
+            cout << "Credits: " << courses[i].credits << endl;
+            cout << "Value: " << courses[i].value << endl;
+            
+            cout << endl;
+        
+        }
+    }
+    cout << "Total Credits: " << bestcredits << endl;
+    cout << "Total Value: " << bestvalue << endl;
+}
 int main()
 {
     const int seed = 7245;
@@ -237,7 +277,7 @@ switch(choise)
             break;
             case 3:
                 
-                cout<<"best course load not implemented yet\n";
+                bestcourseload(courses, numberofcourses, creditcap);
                 break;
             case 4:
             
