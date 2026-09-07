@@ -119,4 +119,6 @@ note: chatgpt helped me in some points for example when i used the terminal , as
    # step1 :
 i  made struct course 
 
+now in final days i finish all moduls (topological sort and best course load also binary search and the gcd) finally the theoretical analysis 
+
 
