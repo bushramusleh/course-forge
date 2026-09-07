@@ -116,5 +116,7 @@ note: chatgpt helped me in some points for example when i used the terminal , as
    make sure if both list match or not
    trace mode for array have 10 index
    --------> second 3 days done
+   # step1 :
+i  made struct course 
 
 
